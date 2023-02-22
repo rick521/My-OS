@@ -24,6 +24,10 @@ struct BOOTINFO { /* 0x0ff0-0x0fff */
 void init_palette(void);
 void set_palette(int start, int end, unsigned char *rgb);
 void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1);
+void putfont8(char *vram, int xsize, int x, int y, char c, char *font);
+void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s);
 
+/*font*/
+extern char font[4096];
 
 
