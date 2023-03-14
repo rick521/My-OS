@@ -14,9 +14,10 @@ void Main(void){
 	fifo8_init(&keyfifo, 32, keybuf);
 
     init_palette();
+
     io_set8(PIC0_IMR, 0xf9); /* 开放PIC1和键盘中断(11111001) */
-
-
+ 
+    memory();
     for (;;) {
         io_hlt();
         if (fifo8_status(&keyfifo)== 0) {
